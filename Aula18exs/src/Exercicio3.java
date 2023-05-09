@@ -9,21 +9,21 @@ public class Exercicio3 {
         System.out.println("Qual o tamanho da lista de números desejada: ");
         int tamanho = ler.nextInt();
         lista = capacidadeLista(tamanho);
-        listaPreenchida = preencherLista(lista, tamanho);
-        System.out.println("A média é "+ mediaAritmetica(listaPreenchida));
+        preencherLista(lista, tamanho);
+        System.out.println("A média é "+ mediaAritmetica(lista));
     }
     public static List capacidadeLista (int tamanho){
         List<Double> listaVazia = new ArrayList<>(tamanho);
         return listaVazia;
     }
-    public static List preencherLista (List listaVazia, int tamanho){
+    public static boolean preencherLista (List listaVazia, int tamanho){
         Scanner ler = new Scanner(System.in);
 
         for (int i = 0; i < tamanho; i++) {
             System.out.println("Digite o "+(i+1)+"º número:");
             listaVazia.add (ler.nextDouble());
         }
-        return listaVazia;
+        return true;
     }
     public static double mediaAritmetica (List lista){
         double media=0;
